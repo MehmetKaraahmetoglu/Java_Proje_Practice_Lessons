@@ -24,14 +24,38 @@ public class OkulKayit {
             String ogrt_ad = scanner.next();
             System.out.println("Lütfen ögretmenin SOYADI'ni yaziniz: ");
             String ogrt_soyad = scanner.next();
-            System.out.println("Lütfen ögretmenin 4 haneli KIMLIK NO bilgisini giriniz: ");
-            String ogrt_kimlik_no = scanner.next();
+
+            String ogrt_kimlik_no;
+            do {
+                System.out.println("Lütfen 4 basamakli TC kimlik numarasini giriniz: ");
+                ogrt_kimlik_no = scanner.next();
+                if (ogrt_kimlik_no.length() == 4) {
+                    break;
+                } else {
+                    System.out.println("Hatali giris yaptiniz...");
+                }
+            } while (ogrt_kimlik_no.length() != 4);
+
+
             System.out.println("Lütfen ögretmenin YAS bilgisini giriniz: ");
             int ogrt_yas = scanner.nextInt();
+
             System.out.println("Lütfen ögretmenin BOLUM bilgisini giriniz: ");
             String ogrt_bolum = scanner.next();
-            System.out.println("Lütfen ögretmenin 4 haneli SICIL NO bilgisini giriniz: ");
-            int ogrt_sicil_no = scanner.nextInt();
+
+
+            int basamakSayisiSicilNo = 0;
+            String ogrt_sicil_no;
+            do {
+                System.out.println("Lütfen ögretmenin 4 haneli SICIL NO bilgisini giriniz: ");
+                ogrt_sicil_no = scanner.next();
+
+                if (ogrt_sicil_no.length() == 4) {
+                    break;
+                } else {
+                    System.out.println("Hatali giris yaptiniz...");
+                }
+            } while (ogrt_sicil_no.length() != 4);
             System.out.println("Cikis yapmak icin Q ya basiniz, devam etmek icin herhangi bir harfe basabilirsiniz..");
             secim = scanner.next().toUpperCase().charAt(0);
 
@@ -88,12 +112,11 @@ public class OkulKayit {
             if (tcNo.equals(each.kimlikNo)) {
                 System.out.println("***Silme islemi basarili bir sekilde gerceklesmistir*** " + "\nSilinen kisiye ait bilgiler: " + each.toString());
                 ogretmen.remove(each);
-                cikis = false;
                 break;
 
-            }
-            if (cikis)
+            } else {
                 System.out.println("Hatali TC No girdiniz ya da" + "\nSistemde bu TC'ye kayitli ogretmen bulunmamaktadir.");
+            }
 
 
         }
@@ -108,8 +131,19 @@ public class OkulKayit {
             String ogr_ad = scanner.next();
             System.out.println("Lütfen ögrencinin SOYADI'ni yaziniz: ");
             String ogr_soyad = scanner.next();
-            System.out.println("Lütfen ögrencinin 4 haneli KIMLIK NO bilgisini giriniz: ");
-            String ogr_kimlik_no = scanner.next();
+
+            String ogr_kimlik_no;
+            do {
+                System.out.println("Lütfen ögrencinin 4 haneli KIMLIK NO bilgisini giriniz: ");
+                ogr_kimlik_no = scanner.next();
+
+                if (ogr_kimlik_no.length() == 4) {
+                    break;
+                } else {
+                    System.out.println("Hatali giris yaptiniz...");
+                }
+            } while (ogr_kimlik_no.length()!=4);
+
             System.out.println("Lütfen ögrencinin YAS bilgisini giriniz: ");
             int ogr_yas = scanner.nextInt();
             System.out.println("Lütfen ögrencinin NUMARA'sini giriniz: ");

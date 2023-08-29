@@ -6,7 +6,7 @@ public class ogretmen {
     String kimlikNo;
     int yas;
     String bolum;
-    int sicilNo;
+    String sicilNo;
     int siraNo;
 
     public ogretmen() {
@@ -23,7 +23,7 @@ public class ogretmen {
                 ", SicilNo: " + sicilNo;
     }
 
-    public ogretmen(int siraNo, String ad, String soyad, String kimlikNo, int yas, String bolum, int sicilNo) {
+    public ogretmen(int siraNo, String ad, String soyad, String kimlikNo, int yas, String bolum, String sicilNo) {
         this.siraNo = siraNo;
         this.ad = ad;
         this.soyad = soyad;
